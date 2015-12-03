@@ -1,0 +1,31 @@
+<head>
+  <title>retrospective</title>
+</head>
+
+<body>
+    <div class="container">
+      <header>Retrospective</header>
+    </div>
+    <ul>
+      {{#each cards}}
+        {{> card}}
+      {{/each}}
+    </ul>
+</body>
+
+<template name="card">
+  <li class="cardList">
+    <div class="comment">{{comment}}</div>
+    <div class="details">{{detail}}</div>
+    <div> <span>Said </span>
+      <span class="who">
+        {{#if anonymous}}
+          someone
+        {{else}}
+          {{user}}
+        {{/if}}
+      </span>
+    </div>
+    <div>{{goodBad}}</div>
+  </li>
+</template>
